@@ -310,13 +310,13 @@ $("#contactform").on("submit", function(e) {
       data:$(this).serialize(),
       type:"POST",
       success:function(data){
-        $("#success").addClass("show-result"); //=== Show Success Message==
+        $("#success").text(data).addClass("show-result"); //=== Show Success Message==
         $("#contactform").each(function(){
           this.reset();
         });
       },
       error:function(data){
-        $("#error").addClass("show-result"); //===Show Error Message====
+        $("#error").text(data).addClass("show-result"); //===Show Error Message====
       }
     });
     var forms = $("#contactform input, #contactform textarea");
